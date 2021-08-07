@@ -17,6 +17,7 @@
 
 ### CREDITS 
 • Give credits fucker
+
 • HamkerCat.
-• © 2021 Aspirer [Aspirer](https://t.me/aspirer2)
+• © 2021 [Aspirer](https://t.me/aspirer2)
 
