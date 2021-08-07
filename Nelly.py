@@ -46,8 +46,8 @@ async def type_and_send(message):
         responsess = responsee.replace("Aco", "Nelly")
     else:
         responsess = responsee
-    if "Who is Tiana?" in responsess:
-        responsess2 = responsess.replace("Who is Nelly?", "Heroine Of Telegram")
+    if "Who is Nelly?" in responsess:
+        responsess2 = responsess.replace("Who is Nelly?", "Heroine Of Telegram By my Master Been Aspirer")
     else:
         responsess2 = responsess
     await message.reply_text(responsess2)
