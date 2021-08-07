@@ -104,7 +104,9 @@ async def main():
     await bot.start()
     print(
         """
-Your TianaChatBot Is Deployed Successfully.
+----------------------------------
+| Nelly X By Aspirer 😍 Started! |
+----------------------------------
 """
     )
     await idle()
