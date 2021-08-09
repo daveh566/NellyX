@@ -47,7 +47,7 @@ async def type_and_send(message):
     else:
         responsess = responsee
     if "Who is Nelly?" in responsess:
-        responsess2 = responsess.replace("Who is Nelly?", "Heroine Of Telegram By my Master Been Aspirer")
+        responsess2 = responsess.replace("Who is Nelly?", "Heroine Of Telegram Made By @aspirer2")
     else:
         responsess2 = responsess
     await message.reply_text(responsess2)
@@ -59,7 +59,7 @@ async def type_and_send(message):
     & filters.text
     & ~filters.command("start")
     & ~filters.edited,
-    group=69
+    group=69,
 )
 async def chat(_, message):
     if message.reply_to_message:
@@ -86,15 +86,14 @@ async def chat(_, message):
 )
 async def chatpm(_, message):
     if not message.text:
-        await message.reply_text("Ufff... Ignoring ....")
+        await message.reply_text("Ufff... Ignoring ...")
         return
     await type_and_send(message)
 
 
-@bot.on_message(filters.command("start") & ~filters.edited & ~filters.private)
-)
+@bot.on_message(filters.command("start") & ~filters.edited)
 async def startt(_, message):
-    await message.reply_text("Hi, I'm Nelly chatbot My Master is @aspirer2")
+    await message.reply_text("Hi, I'm Nelly Chatbot.My master is @aspirer2")
 
 
 async def main():
@@ -105,9 +104,9 @@ async def main():
     await bot.start()
     print(
         """
-----------------------------------
-| Nelly X By Aspirer 😍 Started! |
-----------------------------------
+---------------------------------------------------
+|NELLY X CHATBOT BY ASPIRER SUCCESSFULLY DEPLOYED |
+---------------------------------------------------
 """
     )
     await idle()
