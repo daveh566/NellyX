@@ -61,6 +61,15 @@ async def type_and_send(message):
     & ~filters.edited,
     group=69,
 )
+@bot.on_message(
+    filters.regex("Nelly|nelly")
+    & ~filters.bot
+    & ~filters.via_bot
+    & ~filters.forwarded
+    & ~filters.reply
+    & ~filters.channel
+    & ~filters.edited
+)
 async def chat(_, message):
     if message.reply_to_message:
         if not message.reply_to_message.from_user:
