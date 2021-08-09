@@ -56,8 +56,7 @@ async def type_and_send(message):
 
 @bot.on_message(
     ~filters.private
-    & filters.text
-    & ~filters.command("start")
+    & ~filters.text('Nelly|nelly|NELLY')
     & ~filters.edited,
     group=69,
 )
@@ -81,7 +80,7 @@ async def chat(_, message):
 
 @bot.on_message(
     filters.private
-    & ~filters.command("start")
+    & ~filters.text('Nelly|nelly!|NELLY')
     & ~filters.edited
 )
 async def chatpm(_, message):
@@ -91,9 +90,9 @@ async def chatpm(_, message):
     await type_and_send(message)
 
 
-@bot.on_message(filters.command("start") & ~filters.edited)
+@bot.on_message(filters.text('Nelly|nelly|NELLY') & ~filters.edited)
 async def startt(_, message):
-    await message.reply_text("Hi, I'm Nelly Chatbot.My master is @aspirer2")
+    await message.reply_text("Yes, I'm Nelly Chatbot.My master is @aspirer2")
 
 
 async def main():
