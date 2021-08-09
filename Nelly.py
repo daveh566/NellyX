@@ -165,7 +165,8 @@ async def inuka(client, message):
     except CFError:
         return
 
-@bot.on_message(filters.command("start") & ~filters.edited)
+@bot.on_message(filters.command("start") & ~filters.edited & ~filters.bot & ~filters.private)
+)
 async def startt(_, message):
     await message.reply_text("Hi, I'm Nelly chatbot My Master is @aspirer2")
 
