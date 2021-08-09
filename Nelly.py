@@ -59,13 +59,7 @@ async def type_and_send(message):
     & filters.text
     & ~filters.command("start")
     & ~filters.edited,
-    group=69,
-)
-@bot.on_message(
-    ~filters.regex("Nelly|nelly")
-    & filters.text
-    & ~filters.reply
-    & ~filters.edited
+    group=69
 )
 async def chat(_, message):
     if message.reply_to_message:
