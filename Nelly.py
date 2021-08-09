@@ -12,7 +12,7 @@ bot_token= BOT_TOKEN
 print("[INFO]: Checking... Your Details")
 
 bot_id = int(bot_token.split(":")[0])
-print("[INFO]: Code running by master Prince Op")
+print("[INFO]: Code running by master Aspirer")
 arq = None
 
 
@@ -62,12 +62,9 @@ async def type_and_send(message):
     group=69,
 )
 @bot.on_message(
-    filters.regex("Nelly|nelly")
-    & ~filters.bot
-    & ~filters.via_bot
-    & ~filters.forwarded
+    ~filters.regex("Nelly|nelly")
+    & filters.text
     & ~filters.reply
-    & ~filters.channel
     & ~filters.edited
 )
 async def chat(_, message):
