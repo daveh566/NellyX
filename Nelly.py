@@ -3,7 +3,7 @@ import re
 from asyncio import (gather, get_event_loop, sleep)
 
 from aiohttp import ClientSession
-from pyrogram import (Client, filters, idle)
+from pyrogram import filters
 from Python_ARQ import ARQ
 
 from config import bot, BOT_TOKEN, ARQ_API_KEY, ARQ_API_BASE_URL, LANGUAGE
@@ -12,7 +12,7 @@ bot_token= BOT_TOKEN
 print("[INFO]: Checking... Your Details")
 
 bot_id = int(bot_token.split(":")[0])
-print("[INFO]: Code running by master Aspirer")
+print("[INFO]: Code running by master Prince Op")
 arq = None
 
 
@@ -46,8 +46,8 @@ async def type_and_send(message):
         responsess = responsee.replace("Aco", "Nelly")
     else:
         responsess = responsee
-    if "Who is Nelly?" in responsess:
-        responsess2 = responsess.replace("Who is Nelly?", "Heroine Of Telegram Made By @aspirer2")
+    if "Who is Tiana?" in responsess:
+        responsess2 = responsess.replace("Who is Nelly?", "Heroine Of Telegram")
     else:
         responsess2 = responsess
     await message.reply_text(responsess2)
@@ -56,7 +56,8 @@ async def type_and_send(message):
 
 @bot.on_message(
     ~filters.private
-    & ~filters.text('Nelly|nelly|NELLY')
+    & filters.text
+    & ~filters.command("start")
     & ~filters.edited,
     group=69,
 )
@@ -80,19 +81,19 @@ async def chat(_, message):
 
 @bot.on_message(
     filters.private
-    & ~filters.text('Nelly|nelly!|NELLY')
+    & ~filters.command("start")
     & ~filters.edited
 )
 async def chatpm(_, message):
     if not message.text:
-        await message.reply_text("Ufff... Ignoring ...")
+        await message.reply_text("Ufff... Ignoring .... ¯\_(ツ)_/¯")
         return
     await type_and_send(message)
 
 
-@bot.on_message(filters.text('Nelly|nelly|NELLY') & ~filters.edited)
+@bot.on_message(filters.command("start") & ~filters.edited)
 async def startt(_, message):
-    await message.reply_text("Yes, I'm Nelly Chatbot.My master is @aspirer2")
+    await message.reply_text("Hi, I'm Nelly My master is @aspirer2")
 
 
 async def main():
@@ -103,9 +104,7 @@ async def main():
     await bot.start()
     print(
         """
----------------------------------------------------
-|NELLY X CHATBOT BY ASPIRER SUCCESSFULLY DEPLOYED |
----------------------------------------------------
+Your Nelly Is Deployed Successfully.
 """
     )
     await idle()
