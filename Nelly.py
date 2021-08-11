@@ -1,4 +1,4 @@
-print("[INFO]: Importing Your API_ID, API_HASH, BOT_TOKEN")
+Upprint("[INFO]: Importing Your API_ID, API_HASH, BOT_TOKEN")
 import re
 from asyncio import (gather, get_event_loop, sleep)
 
@@ -54,7 +54,7 @@ async def type_and_send(message):
     await message._client.send_chat_action(chat_id, "cancel")
 
 
-@@bot.on_message(filters.text & ~filters.private & ~filters.edited & ~filters.bot & ~filters.via_bot & ~filters.channel & ~filters.forwarded)
+@bot.on_message(filters.text & ~filters.private & ~filters.edited & ~filters.bot & ~filters.via_bot & ~filters.channel & ~filters.forwarded)
 async def nelly(client, message):
     chat_id = message.chat.id
     if not message.reply_to_message:
