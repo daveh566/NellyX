@@ -1,4 +1,4 @@
-Upprint("[INFO]: Importing Your API_ID, API_HASH, BOT_TOKEN")
+print("[INFO]: Importing Your API_ID, API_HASH, BOT_TOKEN")
 import re
 from asyncio import (gather, get_event_loop, sleep)
 
