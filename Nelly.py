@@ -54,61 +54,63 @@ async def type_and_send(message):
     await message._client.send_chat_action(chat_id, "cancel")
 
 
-@bot.on_message(
-    ~filters.private
-    & filters.text
-    & ~filters.command("start")
-    & ~filters.edited,
-    group=69,
-)
-async def chat(_, message):
-    if message.reply_to_message:
-        if not message.reply_to_message.from_user:
-            return
-        from_user_id = message.reply_to_message.from_user.id
-        if from_user_id != bot_id:
-            return
-    else:
-        match = re.search(
-            "[.|\n]{0,}iris[.|\n]{0,}",
-            message.text.strip(),
-            flags=re.IGNORECASE,
-        )
-        if not match:
-            return
-    await type_and_send(message)
-
-
-@bot.on_message(
-    filters.private
-    & ~filters.command("start")
-    & ~filters.edited
-)
-async def chatpm(_, message):
-    if not message.text:
-        await message.reply_text("Ufff... Ignoring .... ¯\_(ツ)_/¯")
+@@bot.on_message(filters.text & ~filters.private & ~filters.edited & ~filters.bot & ~filters.via_bot & ~filters.channel & ~filters.forwarded)
+async def nelly(client, message):
+    chat_id = message.chat.id
+    if not message.reply_to_message:
+        message.continue_propagation()
+    try:
+        aibot = message.reply_to_message.from_user.id
+    except:
         return
-    await type_and_send(message)
+    if aibot != BOT_ID:
+        message.continue_propagation()
+    text = message.text
 
+    if text.startswith("/") or text.startswith("@"):
+        message.continue_propagation()
+    try:
+        lan = translator.detect(text)
+    except:
+        return
+    test = text
+    if not "en" in lan and not lan == "":
+        try:
+            test = translator.translate(test, lang_tgt="en")
+        except:
+            return
+    finaltxt = test.replace(" ", "%20")
+    try:
+        L = await fetch(f"https://api.affiliateplus.xyz/api/chatbot?message={finaltxt}&botname=Nelly&ownername=Aspirer&user=1")
+        msg = L["message"]        
+    except Exception as e:
+        await m.edit(str(e))
+        return
+    if not "en" in lan and not lan == "":
+        msg = translator.translate(msg, lang_tgt=lan[0])
+    try:
+        await bot.send_chat_action(message.chat.id, "typing")
+        await message.reply(msg)
+    except:
+        return
+    message.continue_propagation()
 
+    
 @bot.on_message(filters.command("start") & ~filters.edited)
-async def startt(_, message):
-    await message.reply_text("Hi, I'm Nelly My master is @aspirer2")
+async def start(client, message):
+   if message.chat.type == 'private':
+       await message.reply("**Hey There, I'm Nelly. An advanced chatbot with AI. \n\nAdd me to your group and chat with me!**",   
+                            reply_markup=InlineKeyboardMarkup(
+                                [[
+                                        InlineKeyboardButton(
+                                            "Dev", url="https://t.me/KayAspirerProject"),
+                                        InlineKeyboardButton(
+                                            "Repo", url="https://t.me/KayAspirerProject")
+                                    ]]
+                            ),               
+           )
+   else:
 
+       await message.reply("**I'm alive, check my pm to know more about me!**")
 
-async def main():
-    global arq
-    session = ClientSession()
-    arq = ARQ(ARQ_API_BASE_URL, ARQ_API_KEY, session)
-
-    await bot.start()
-    print(
-        """
-Your Nelly Is Deployed Successfully.
-"""
-    )
-    await idle()
-
-
-loop = get_event_loop()
-loop.run_until_complete(main())
+bot.run()
