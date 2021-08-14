@@ -62,7 +62,7 @@ async def main():
    await bot.start()
     print(
         """
-Your TianaChatBot Is Deployed Successfully.
+Your bot Is Deployed Successfully.
 """
     )
     await idle()
