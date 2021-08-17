@@ -90,7 +90,7 @@ async def chatpm(_, message):
         return
     await type_and_send(message)
 
-@bot on message(
+@bot.on_message(
      filters.regex("Nelly|nelly|NELLY")
      & ~filters.edited
 )
