@@ -161,7 +161,7 @@ async def (client, message):
         return
 @bot.on_message(filters.command("start") & ~filters.edited)
 async def startt(_, message):
-    await message.reply_text("Hi, I'm Nelly My master is @aspirer2 for inspired by  @kayaspirerproject group")
+    await message.reply_text("Hi, I'm Nelly My master is @aspirer2  inspired by  @kayaspirerproject group")
 
 
 async def main():
