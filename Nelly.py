@@ -91,10 +91,10 @@ async def chatpm(_, message):
     await type_and_send(message)
 
 @bot.on_message(
-     filters.regex("Nelly|nelly|NELLY")
-     & ~filters.edited
+    filters.regex("Nelly|nelly|NELLY")
+    & ~filters.edited
 )
-async def (client, message):
+async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
