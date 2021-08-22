@@ -90,11 +90,9 @@ async def chatpm(_, message):
         return
     await type_and_send(message)
 
-@bot.on_message(
-    filters.regex("Nelly|nelly|NELLY")
-    & ~filters.edited
-)
-async def inuka(client, message):
+
+@bot.on_message(filters.regex("Nelly|nelly|NELLY"))
+async def aspirer(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -125,43 +123,7 @@ async def inuka(client, message):
         rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
     else:
         rm = msg
-        # print (rm)
-    try:
-        lan = translator.detect(rm)
-        lan = lan.lang
-    except:
-        return
-    test = rm
-    if not "en" in lan and not lan == "":
-        try:
-            test = translator.translate(test, dest="en")
-            test = test.text
-        except:
-            return
-
-    # test = emoji.demojize(test.strip())
-
-    test = test.replace("nelly", "Aco")
-    test = test.replace("Nelly", "Aco")
-    response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "Nelly")
-    response = response.replace("aco", "Nelly")
-
-    pro = response
-    if not "en" in lan and not lan == "":
-        try:
-            pro = translator.translate(pro, dest=lan)
-            pro = pro.text
-        except Exception:
-            return
-    try:
-        await bot.send_chat_action(message.chat.id, "typing")
-        await message.reply_text(pro)
-    except CFError:
-        return
-@bot.on_message(filters.regex("Nelly|nelly|NELLY"))
-def my_handler(client, message):
-    print(message)
+        print(rm)
 
 @bot.on_message(filters.command("start") & ~filters.edited)
 async def startt(_, message):
