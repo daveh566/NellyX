@@ -161,7 +161,7 @@ async def inuka(client, message):
         return
 @bot.on_message(filters.regex("Nelly|nelly|NELLY"))
 def my_handler(client, message):
-    print(Yes I'm online)
+    print(message)
 
 @bot.on_message(filters.command("start") & ~filters.edited)
 async def startt(_, message):
