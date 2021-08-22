@@ -91,7 +91,8 @@ async def chatpm(_, message):
     await type_and_send(message)
 
 
-@bot.on_message(filters.regex("Nelly|nelly|NELLY"))
+@bot.on_message(
+     filters.regex("Nelly|nelly|NELLY"))
 async def aspirer(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
