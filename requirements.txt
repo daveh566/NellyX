@@ -3,5 +3,6 @@ python-arq
 TgCrypto
 heroku3
 regex
+google-trans-new==1.1.9
 googletrans==4.0.0-rc1
 aiohttp
