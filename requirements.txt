@@ -4,3 +4,4 @@ TgCrypto
 heroku3
 regex
 googletrans==4.0.0-rc1
+aiohttp
