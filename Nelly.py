@@ -6,12 +6,12 @@ from aiohttp import ClientSession
 from pyrogram import (Client, filters, idle)
 from Python_ARQ import ARQ
 # from google_trans_new import google_translator
-from googletrans import Translator as google_translato
+from googletrans import Translator as google_translator
 
-translator = google_translator()
 from config import bot, BOT_TOKEN, ARQ_API_KEY, ARQ_API_BASE_URL, LANGUAGE
 bot_token= BOT_TOKEN
 
+translator = google_translator()
 print("[INFO]: Checking... Your Details")
 
 bot_id = int(bot_token.split(":")[0])
