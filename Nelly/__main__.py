@@ -1,5 +1,5 @@
-from lycia import NELLY
-from lycia.Lycia import start, nelly, nellyinline
+from Nelly import NELLY
+from Nelly.Nelly import start, nelly, nellyinline
 from pyrogram import filters
 
 if __name__ == "__main__":
