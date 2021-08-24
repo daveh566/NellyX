@@ -1,1 +1,1 @@
-worker: python3.9 Nelly.py
+worker: python3.9 Nelly
