@@ -3,7 +3,7 @@ import aiohttp
 import emoji
 import requests
 import re
-from lycia import NELLY
+from Nelly import NELLY
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, filters
 from google_trans_new import google_translator
@@ -114,7 +114,7 @@ async def nelly(client, message):
         result = result.replace('"}', "")
         result = result.replace("Aco", "Nelly")
         result = result.replace("Eliza", "Nelly")
-        result = result.replace("Hi~", "Hello Friend I Am @Lyciachatbot")
+        result = result.replace("Hi~", "Hello Friend I Am Nelly")
         result = result.replace("My dear great botmaster, Nellybot Team.", "Made By @madepranav")
         result = result.replace("Have the control right.", "My Father Is @madepranav")
         result = result.replace("I was created by  NellyBot Team @kayaspirerproject.", "I was created by @Techno_Ocean Team.")
@@ -185,12 +185,12 @@ async def redaura(client, message):
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
-    result = result.replace("Aco", "Lycia")
-    result = result.replace("Eliza", "@Lyciachatbot")
-    result = result.replace("Hi~", "Hello Friend I Am @Lyciachatbot")
-    result = result.replace("My dear great botmaster, Lyciabot Team.", "Made By @madepranav")
+    result = result.replace("Aco", "Nelly")
+    result = result.replace("Eliza", "Nelly")
+    result = result.replace("Hi~", "Hello Friend I Am Nelly")
+    result = result.replace("My dear great botmaster, Nellybot Team.", "Made By @madepranav")
     result = result.replace("Have the control right.", "My Father Is @madepranav")
-    result = result.replace("I was created by Lyciabot Team.", "I was created by @Techno_Ocean Team.")
+    result = result.replace("I was created by NellyBot Team @kayaspirerproject.", "I was created by @Techno_Ocean Team.")
     result = result.replace("<a href=\\", "<a href =")
     result = result.replace("<\/a>", "</a>")
     red = result
@@ -264,9 +264,9 @@ async def redaura(client, message):
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
-    result = result.replace("Aco", "Lycia")
+    result = result.replace("Aco", "Nelly")
     result = result.replace("Eliza", "Nelly")
-    result = result.replace("Hi~", "Hello Friend I Am @elianachatbot")
+    result = result.replace("Hi~", "Hello Friend I Am Nelly")
     result = result.replace("My dear great botmaster, Nellybot Team.", "Made By @madepranav")
     result = result.replace("Have the control right.", "My Father Is @madepranav")
     result = result.replace("I was created by NellyBot Team @Kayaspirerproject.", "I was created by @Techno_Ocean Team.")
