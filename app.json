@@ -15,9 +15,9 @@
     },
   "env": {
     "BOT_TOKEN": {
-      "description": "A Bot Token from @BotFather",
+      "description": "A Bot Token from @BotFather"
+      "value": "1992550178:AAEkLBRE4_zw8Sp_kDnBo7reb-yE9JaAioE",
       "required": true
-      "value":,"1992550178:AAEkLBRE4_zw8Sp_kDnBo7reb-yE9JaAioE"
     }
   }
 }
