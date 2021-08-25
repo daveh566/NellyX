@@ -78,7 +78,7 @@ async def chat(_, message):
         if not match:
             return
     await type_and_send(message)
-@app.on_message(
+@bot.on_message(
     filters.regex("nelly|Nelly|NELLY")
     & ~filters.bot
     & ~filters.via_bot
@@ -149,7 +149,7 @@ async def aspirer(client, message):
         except Exception:
             return
     try:
-        await app.send_chat_action(message.chat.id, "typing")
+        await bot.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
