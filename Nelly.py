@@ -86,14 +86,14 @@ async def chat(_, message):
 )
 async def chatpm(_, message):
     if not message.text:
-        await message.reply_text("Ufff... Ignoring .... ¯\_(ツ)_/¯")
+        await message.reply_text("What's that,,,,I can't read that,,,")
         return
     await type_and_send(message)
 
 
 @bot.on_message(filters.command("start") & ~filters.edited)
 async def startt(_, message):
-    await message.reply_text("Hi, I'm Nelly AI chatbot By @aspirer2 My support group is @kayaspirerproject")
+    await message.reply_text("Hi, I'm Nelly AI chatbot By @kayaspirerproject")
 
 
 async def main():
